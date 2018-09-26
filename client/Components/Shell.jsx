@@ -1,7 +1,12 @@
 import React from 'react';
+import {ShellWrapper} from './Style.jsx';
 
 function Shell(props) {
-  return <h1>Shell</h1>;
+  return (
+  	<ShellWrapper>
+  		<h1>Choose Your Shell</h1>
+  	</ShellWrapper>
+  );
 }
 
 export default Shell;

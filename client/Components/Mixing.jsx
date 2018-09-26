@@ -1,7 +1,13 @@
 import React from 'react';
 
+import { MixingWrapper } from './Style.jsx';
+
 function Mixing(props) {
-  return <h1>Mixing</h1>;
+  return(
+  	<MixingWrapper>
+  		<h1>Choose Your Mixing</h1>
+  	</MixingWrapper>
+  ) 
 }
 
 export default Mixing;

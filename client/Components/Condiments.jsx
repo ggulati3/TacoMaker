@@ -1,7 +1,13 @@
 import React from 'react';
+import { CondimentWrapper } from './Style.jsx';
 
 function Condiments(props) {
-  return <h1>Condiments</h1>;
+  return (
+  	<CondimentWrapper>
+  		<h1>Choose Your Condiment</h1>
+  	</CondimentWrapper>
+
+  )
 }
 
 export default Condiments;
