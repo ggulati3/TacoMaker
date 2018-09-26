@@ -14,12 +14,25 @@ import { WebPage } from './Components/Style.jsx'
 class App extends React.Component{
 	constructor(props){
 		super(props)
+		this.state = {
+			shells: '',
+			mixins: '',
+			seasonings: '',
+			condiments: '',
+			baseLayers: ''
+		}
+		this.getAPI = this.getAPI.bind(this);
+
+	}
+
+	getAPI(){
+	
 	}
 
 	render(){
 		return(
-			<WebPage>
-				<Navbar></Navbar>
+			<WebPage onClick = {this.getAPI}>
+				<Navbar>{console.log(this.state)}</Navbar>
 				<Shell></Shell>
 				<Seasoning></Seasoning>
 				<Ingredients></Ingredients>

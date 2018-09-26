@@ -1199,16 +1199,34 @@ var App = function (_React$Component) {
 	function App(props) {
 		_classCallCheck(this, App);
 
-		return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+		_this.state = {
+			shells: '',
+			mixins: '',
+			seasonings: '',
+			condiments: '',
+			baseLayers: ''
+		};
+		_this.getAPI = _this.getAPI.bind(_this);
+
+		return _this;
 	}
 
 	_createClass(App, [{
+		key: 'getAPI',
+		value: function getAPI() {}
+	}, {
 		key: 'render',
 		value: function render() {
 			return _react2.default.createElement(
 				_Style.WebPage,
-				null,
-				_react2.default.createElement(_navbar2.default, null),
+				{ onClick: this.getAPI },
+				_react2.default.createElement(
+					_navbar2.default,
+					null,
+					console.log(this.state)
+				),
 				_react2.default.createElement(_Shell2.default, null),
 				_react2.default.createElement(_Seasoning2.default, null),
 				_react2.default.createElement(_Ingredients2.default, null),
