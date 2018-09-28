@@ -28,6 +28,7 @@ class App extends React.Component{
 		this.getMenu = this.getMenu.bind(this)
 		this.addIngredients = this.addIngredients.bind(this);
 		this.changeItem = this.changeItem.bind(this);
+		this.formSentence = this.formSentence.bind(this);
 	}
 
 	getMenu(){
@@ -42,15 +43,19 @@ class App extends React.Component{
 
 	addIngredients(e){
 		e.preventDefault();
-		console.log(this.item)
 		this.setState({[this.item]: e.currentTarget.textContent})
-		//console.log(this.state)
 		
 	}
 
 	changeItem (value){
 		this.item = value;
 		console.log(this.item)
+	}
+
+	formSentence(){
+		alert(`Congratulations! You have ordered a taco with ${this.state.shells},
+			${this.state.mixins}, ${this.state.seasonings}, ${this.state.condiments}, 
+			${this.state.baseLayers}`)
 	}
 
 	render(){ 
@@ -60,14 +65,13 @@ class App extends React.Component{
 			} else {
 				return(
 					<WebPage> 
-						<Navbar></Navbar>
+						<Navbar fillOrder = {this.formSentence}></Navbar>
 						<Shell shellItems = {this.state.menu.shells} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></Shell>
 						<Seasoning seasoningItems = {this.state.menu.seasonings} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></Seasoning>
-						<Ingredients ingredients = {this.state}></Ingredients>
-
 						<Mixing mixingItems = {this.state.menu.mixins} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></Mixing>
-						<BaseLayer baseLayerItems = {this.state.menu.baseLayers} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></BaseLayer>
+						<Ingredients ingredients = {this.state}></Ingredients>
 						<Condiments condimentItems = {this.state.menu.condiments} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></Condiments>
+						<BaseLayer baseLayerItems = {this.state.menu.baseLayers} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></BaseLayer>
 					</WebPage>
 				);	
 			}

@@ -4,7 +4,7 @@ import { IngredientWrapper } from './Style.jsx';
 function Ingredients(props) {
   return(
   	<IngredientWrapper>
-  		<h1>Current Ingredients</h1>
+  		<h1>Current Order</h1>
   		<h3>{props.ingredients.shells}</h3>
   		<h3>{props.ingredients.seasonings}</h3>
   		<h3>{props.ingredients.mixins}</h3>

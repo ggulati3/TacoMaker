@@ -13,38 +13,55 @@ export const NavbarWrapper = styled.nav `
 	width: 100%;
 	height: 2em;
 	z-index: 1;
-`
+	display:flex;
+`;
+
+export const Header = styled.div `
+	padding: 10px;
+	padding-right:700px;
+`;
+
+export const CheckOut = styled.div`
+	padding: 10px;
+	font-size: 1em;
+	background-color:red;
+
+`;
 
 export const ShellWrapper = styled.div`
   border:solid
-  height: 10em;
-  width: 25%;
+  width: 19%;
+  height:20em;
+  overflow-y: scroll;
 
 `;
 
 export const BaseLayerWrapper = styled.div `
 	border:solid;
-	width: 50%;
+	align-items: stretch;
 	height: 20em;
 	overflow-y: scroll;
 `;
 
 export const MixingWrapper = styled.div `
 	border:solid;
-	width:25%;
+	width: 20%;
+	height: 20em;
+	overflow-y: scroll;
 `;
 
 export const SeasoningWrapper = styled.div `
 	border:solid;
-	width: 50%;
-	height: 10em;
+	width: 20%;
+	height: 20em;
 	overflow-y: scroll
 `;
 
 export const CondimentWrapper = styled.div `
 	border:solid;
-	width:75.5%;
-	height: 12em;
+	flex-grow:1;
+	align-items: stretch;
+	height:20em;
 	overflow-y: scroll;
 `;
 
@@ -52,11 +69,14 @@ export const IngredientWrapper = styled.div `
 	border:solid;
 	flex-grow:1;
 	align-items: stretch;
-	height: 10em;
+	font-family:Comic Sans MS;
+	height: 20em;
 `;
 
 export const Item = styled.div `
 	background-color: green;
+	font-family:Comic Sans MS;
+	font-size:36px;
 	&:hover {
     	background: yellow;
   	}

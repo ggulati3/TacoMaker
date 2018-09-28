@@ -588,17 +588,19 @@ if (process.env.NODE_ENV === 'production') {
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.Item = exports.IngredientWrapper = exports.CondimentWrapper = exports.SeasoningWrapper = exports.MixingWrapper = exports.BaseLayerWrapper = exports.ShellWrapper = exports.NavbarWrapper = exports.WebPage = undefined;
+exports.Item = exports.IngredientWrapper = exports.CondimentWrapper = exports.SeasoningWrapper = exports.MixingWrapper = exports.BaseLayerWrapper = exports.ShellWrapper = exports.CheckOut = exports.Header = exports.NavbarWrapper = exports.WebPage = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n\tdisplay: flex;\n\tflex-wrap: wrap;\n'], ['\n\tdisplay: flex;\n\tflex-wrap: wrap;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n\tbackground-color: green;\n\tfont-family: Comic Sans MS;\n\tfont-size: 2em;\n\tcolor: yellow;\n\twidth: 100%;\n\theight: 2em;\n\tz-index: 1;\n'], ['\n\tbackground-color: green;\n\tfont-family: Comic Sans MS;\n\tfont-size: 2em;\n\tcolor: yellow;\n\twidth: 100%;\n\theight: 2em;\n\tz-index: 1;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  border:solid\n  height: 10em;\n  width: 25%;\n\n'], ['\n  border:solid\n  height: 10em;\n  width: 25%;\n\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n\tborder:solid;\n\twidth: 50%;\n\theight: 20em;\n\toverflow-y: scroll;\n'], ['\n\tborder:solid;\n\twidth: 50%;\n\theight: 20em;\n\toverflow-y: scroll;\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n\tborder:solid;\n\twidth:25%;\n'], ['\n\tborder:solid;\n\twidth:25%;\n']),
-    _templateObject6 = _taggedTemplateLiteral(['\n\tborder:solid;\n\twidth: 50%;\n\theight: 10em;\n\toverflow-y: scroll\n'], ['\n\tborder:solid;\n\twidth: 50%;\n\theight: 10em;\n\toverflow-y: scroll\n']),
-    _templateObject7 = _taggedTemplateLiteral(['\n\tborder:solid;\n\twidth:75.5%;\n\theight: 12em;\n\toverflow-y: scroll;\n'], ['\n\tborder:solid;\n\twidth:75.5%;\n\theight: 12em;\n\toverflow-y: scroll;\n']),
-    _templateObject8 = _taggedTemplateLiteral(['\n\tborder:solid;\n\tflex-grow:1;\n\talign-items: stretch;\n\theight: 10em;\n'], ['\n\tborder:solid;\n\tflex-grow:1;\n\talign-items: stretch;\n\theight: 10em;\n']),
-    _templateObject9 = _taggedTemplateLiteral(['\n\tbackground-color: green;\n\t&:hover {\n    \tbackground: yellow;\n  \t}\n'], ['\n\tbackground-color: green;\n\t&:hover {\n    \tbackground: yellow;\n  \t}\n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n\tbackground-color: green;\n\tfont-family: Comic Sans MS;\n\tfont-size: 2em;\n\tcolor: yellow;\n\twidth: 100%;\n\theight: 2em;\n\tz-index: 1;\n\tdisplay:flex;\n'], ['\n\tbackground-color: green;\n\tfont-family: Comic Sans MS;\n\tfont-size: 2em;\n\tcolor: yellow;\n\twidth: 100%;\n\theight: 2em;\n\tz-index: 1;\n\tdisplay:flex;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n\tpadding: 10px;\n\tpadding-right:700px;\n'], ['\n\tpadding: 10px;\n\tpadding-right:700px;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n\tpadding: 10px;\n\tfont-size: 1em;\n\tbackground-color:red;\n\n'], ['\n\tpadding: 10px;\n\tfont-size: 1em;\n\tbackground-color:red;\n\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  border:solid\n  width: 19%;\n  height:20em;\n  overflow-y: scroll;\n\n'], ['\n  border:solid\n  width: 19%;\n  height:20em;\n  overflow-y: scroll;\n\n']),
+    _templateObject6 = _taggedTemplateLiteral(['\n\tborder:solid;\n\talign-items: stretch;\n\theight: 20em;\n\toverflow-y: scroll;\n'], ['\n\tborder:solid;\n\talign-items: stretch;\n\theight: 20em;\n\toverflow-y: scroll;\n']),
+    _templateObject7 = _taggedTemplateLiteral(['\n\tborder:solid;\n\twidth: 20%;\n\theight: 20em;\n\toverflow-y: scroll;\n'], ['\n\tborder:solid;\n\twidth: 20%;\n\theight: 20em;\n\toverflow-y: scroll;\n']),
+    _templateObject8 = _taggedTemplateLiteral(['\n\tborder:solid;\n\twidth: 20%;\n\theight: 20em;\n\toverflow-y: scroll\n'], ['\n\tborder:solid;\n\twidth: 20%;\n\theight: 20em;\n\toverflow-y: scroll\n']),
+    _templateObject9 = _taggedTemplateLiteral(['\n\tborder:solid;\n\tflex-grow:1;\n\talign-items: stretch;\n\theight:20em;\n\toverflow-y: scroll;\n'], ['\n\tborder:solid;\n\tflex-grow:1;\n\talign-items: stretch;\n\theight:20em;\n\toverflow-y: scroll;\n']),
+    _templateObject10 = _taggedTemplateLiteral(['\n\tborder:solid;\n\tflex-grow:1;\n\talign-items: stretch;\n\tfont-family:Comic Sans MS;\n\theight: 20em;\n'], ['\n\tborder:solid;\n\tflex-grow:1;\n\talign-items: stretch;\n\tfont-family:Comic Sans MS;\n\theight: 20em;\n']),
+    _templateObject11 = _taggedTemplateLiteral(['\n\tbackground-color: green;\n\tfont-family:Comic Sans MS;\n\tfont-size:36px;\n\t&:hover {\n    \tbackground: yellow;\n  \t}\n'], ['\n\tbackground-color: green;\n\tfont-family:Comic Sans MS;\n\tfont-size:36px;\n\t&:hover {\n    \tbackground: yellow;\n  \t}\n']);
 
 var _styledComponents = __webpack_require__(53);
 
@@ -612,19 +614,23 @@ var WebPage = exports.WebPage = _styledComponents2.default.div(_templateObject);
 
 var NavbarWrapper = exports.NavbarWrapper = _styledComponents2.default.nav(_templateObject2);
 
-var ShellWrapper = exports.ShellWrapper = _styledComponents2.default.div(_templateObject3);
+var Header = exports.Header = _styledComponents2.default.div(_templateObject3);
 
-var BaseLayerWrapper = exports.BaseLayerWrapper = _styledComponents2.default.div(_templateObject4);
+var CheckOut = exports.CheckOut = _styledComponents2.default.div(_templateObject4);
 
-var MixingWrapper = exports.MixingWrapper = _styledComponents2.default.div(_templateObject5);
+var ShellWrapper = exports.ShellWrapper = _styledComponents2.default.div(_templateObject5);
 
-var SeasoningWrapper = exports.SeasoningWrapper = _styledComponents2.default.div(_templateObject6);
+var BaseLayerWrapper = exports.BaseLayerWrapper = _styledComponents2.default.div(_templateObject6);
 
-var CondimentWrapper = exports.CondimentWrapper = _styledComponents2.default.div(_templateObject7);
+var MixingWrapper = exports.MixingWrapper = _styledComponents2.default.div(_templateObject7);
 
-var IngredientWrapper = exports.IngredientWrapper = _styledComponents2.default.div(_templateObject8);
+var SeasoningWrapper = exports.SeasoningWrapper = _styledComponents2.default.div(_templateObject8);
 
-var Item = exports.Item = _styledComponents2.default.div(_templateObject9);
+var CondimentWrapper = exports.CondimentWrapper = _styledComponents2.default.div(_templateObject9);
+
+var IngredientWrapper = exports.IngredientWrapper = _styledComponents2.default.div(_templateObject10);
+
+var Item = exports.Item = _styledComponents2.default.div(_templateObject11);
 
 /***/ }),
 /* 4 */
@@ -1729,6 +1735,7 @@ var App = function (_React$Component) {
 		_this.getMenu = _this.getMenu.bind(_this);
 		_this.addIngredients = _this.addIngredients.bind(_this);
 		_this.changeItem = _this.changeItem.bind(_this);
+		_this.formSentence = _this.formSentence.bind(_this);
 		return _this;
 	}
 
@@ -1750,15 +1757,18 @@ var App = function (_React$Component) {
 		key: 'addIngredients',
 		value: function addIngredients(e) {
 			e.preventDefault();
-			console.log(this.item);
 			this.setState(_defineProperty({}, this.item, e.currentTarget.textContent));
-			//console.log(this.state)
 		}
 	}, {
 		key: 'changeItem',
 		value: function changeItem(value) {
 			this.item = value;
 			console.log(this.item);
+		}
+	}, {
+		key: 'formSentence',
+		value: function formSentence() {
+			alert('Congratulations! You have ordered a taco with ' + this.state.shells + ',\n\t\t\t' + this.state.mixins + ', ' + this.state.seasonings + ', ' + this.state.condiments + ', \n\t\t\t' + this.state.baseLayers);
 		}
 	}, {
 		key: 'render',
@@ -1774,13 +1784,13 @@ var App = function (_React$Component) {
 				return _react2.default.createElement(
 					_Style.WebPage,
 					null,
-					_react2.default.createElement(_navbar2.default, null),
+					_react2.default.createElement(_navbar2.default, { fillOrder: this.formSentence }),
 					_react2.default.createElement(_Shell2.default, { shellItems: this.state.menu.shells, add: this.addIngredients, item: this.item, change: this.changeItem }),
 					_react2.default.createElement(_Seasoning2.default, { seasoningItems: this.state.menu.seasonings, add: this.addIngredients, item: this.item, change: this.changeItem }),
-					_react2.default.createElement(_Ingredients2.default, { ingredients: this.state }),
 					_react2.default.createElement(_Mixing2.default, { mixingItems: this.state.menu.mixins, add: this.addIngredients, item: this.item, change: this.changeItem }),
-					_react2.default.createElement(_BaseLayer2.default, { baseLayerItems: this.state.menu.baseLayers, add: this.addIngredients, item: this.item, change: this.changeItem }),
-					_react2.default.createElement(_Condiments2.default, { condimentItems: this.state.menu.condiments, add: this.addIngredients, item: this.item, change: this.changeItem })
+					_react2.default.createElement(_Ingredients2.default, { ingredients: this.state }),
+					_react2.default.createElement(_Condiments2.default, { condimentItems: this.state.menu.condiments, add: this.addIngredients, item: this.item, change: this.changeItem }),
+					_react2.default.createElement(_BaseLayer2.default, { baseLayerItems: this.state.menu.baseLayers, add: this.addIngredients, item: this.item, change: this.changeItem })
 				);
 			}
 		}
@@ -22128,7 +22138,16 @@ function Navbar(props) {
   return _react2.default.createElement(
     _Style.NavbarWrapper,
     null,
-    'Taco Maker'
+    _react2.default.createElement(
+      _Style.Header,
+      null,
+      'Company X Tacos!'
+    ),
+    _react2.default.createElement(
+      _Style.CheckOut,
+      { onClick: props.fillOrder },
+      'Click to Complete Order'
+    )
   );
 }
 
@@ -27245,7 +27264,7 @@ function Shell(props) {
 		_react2.default.createElement(
 			'h1',
 			null,
-			'Choose Your Shell '
+			'Choose One Shell '
 		),
 		_react2.default.createElement(
 			'div',
@@ -27264,8 +27283,6 @@ function Shell(props) {
 }
 
 exports.default = Shell;
-
-// <Item key={key} onClick ={props.change('shells')} onClick ={props.add}>{category}</Item>
 
 /***/ }),
 /* 65 */
@@ -27293,7 +27310,7 @@ function BaseLayer(props) {
     _react2.default.createElement(
       'h1',
       null,
-      'Choose Your Base Layer'
+      'Choose One Base Layer'
     ),
     _react2.default.createElement(
       'div',
@@ -27339,7 +27356,7 @@ function Mixing(props) {
     _react2.default.createElement(
       'h1',
       null,
-      'Choose Your Mixing'
+      'Choose One Mixing'
     ),
     _react2.default.createElement(
       'div',
@@ -27385,7 +27402,7 @@ function Seasoning(props) {
     _react2.default.createElement(
       'h1',
       null,
-      'Choose Your Seasoning'
+      'Choose One Seasoning'
     ),
     _react2.default.createElement(
       'div',
@@ -27431,7 +27448,7 @@ function Condiments(props) {
     _react2.default.createElement(
       'h1',
       null,
-      'Choose Your Condiment'
+      'Choose One Condiment'
     ),
     _react2.default.createElement(
       'div',
@@ -27477,7 +27494,7 @@ function Ingredients(props) {
     _react2.default.createElement(
       'h1',
       null,
-      'Current Ingredients'
+      'Current Order'
     ),
     _react2.default.createElement(
       'h3',

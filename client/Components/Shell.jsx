@@ -5,7 +5,7 @@ function Shell(props) {
 	  return (
 	  	<ShellWrapper>
 
-	  		<h1>Choose Your Shell </h1>
+	  		<h1>Choose One Shell </h1>
 	  		
 	  		<div>
 	  			{props.shellItems.map((category, key) =>(
@@ -17,5 +17,3 @@ function Shell(props) {
 }
 
 export default Shell;
-
-// <Item key={key} onClick ={props.change('shells')} onClick ={props.add}>{category}</Item>

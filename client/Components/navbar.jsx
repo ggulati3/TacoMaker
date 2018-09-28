@@ -1,12 +1,13 @@
 import React from 'react';
-import { NavbarWrapper } from './Style.jsx';
+import { NavbarWrapper, Header, CheckOut } from './Style.jsx';
 
 
 function Navbar(props){
 
   return (
     <NavbarWrapper>
-      Taco Maker
+      <Header>Company X Tacos!</Header>
+      <CheckOut onClick={props.fillOrder}>Click to Complete Order</CheckOut>
     </NavbarWrapper>
   );
 }
