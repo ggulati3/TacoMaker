@@ -80,4 +80,11 @@ export const Item = styled.div `
 	&:hover {
     	background: yellow;
   	}
+`;
+
+export const OrderItem = styled.h3 `
+	font-family:Comic Sans MS;
+		&:hover {
+    	background: red;
+  	}
 `

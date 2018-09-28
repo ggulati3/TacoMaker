@@ -29,6 +29,7 @@ class App extends React.Component{
 		this.addIngredients = this.addIngredients.bind(this);
 		this.changeItem = this.changeItem.bind(this);
 		this.formSentence = this.formSentence.bind(this);
+		this.removeItem = this.removeItem.bind(this);
 	}
 
 	getMenu(){
@@ -58,6 +59,12 @@ class App extends React.Component{
 			${this.state.baseLayers}`)
 	}
 
+	removeItem(e){
+		e.preventDefault();
+		console.log(e.currentTarget.textContent)
+		this.setState({[this.item]: ''})
+	}
+
 	render(){ 
 
 			if (this.state.isLoading) {
@@ -69,7 +76,7 @@ class App extends React.Component{
 						<Shell shellItems = {this.state.menu.shells} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></Shell>
 						<Seasoning seasoningItems = {this.state.menu.seasonings} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></Seasoning>
 						<Mixing mixingItems = {this.state.menu.mixins} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></Mixing>
-						<Ingredients ingredients = {this.state}></Ingredients>
+						<Ingredients ingredients = {this.state} removeItem={this.removeItem} item={this.item} change = {this.changeItem}></Ingredients>
 						<Condiments condimentItems = {this.state.menu.condiments} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></Condiments>
 						<BaseLayer baseLayerItems = {this.state.menu.baseLayers} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></BaseLayer>
 					</WebPage>

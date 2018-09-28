@@ -1,15 +1,15 @@
 import React from 'react';
-import { IngredientWrapper } from './Style.jsx';
+import { IngredientWrapper, OrderItem } from './Style.jsx';
 
 function Ingredients(props) {
   return(
   	<IngredientWrapper>
   		<h1>Current Order</h1>
-  		<h3>{props.ingredients.shells}</h3>
-  		<h3>{props.ingredients.seasonings}</h3>
-  		<h3>{props.ingredients.mixins}</h3>
-  		<h3>{props.ingredients.condiments}</h3>
-  		<h3>{props.ingredients.baseLayers}</h3>
+  		<OrderItem onClick={(e) => {props.change('shells'); props.removeItem(e);}}>{props.ingredients.shells}</OrderItem>
+  		<OrderItem onClick={(e) => {props.change('seasonings'); props.removeItem(e);}}>{props.ingredients.seasonings}</OrderItem>
+  		<OrderItem onClick={(e) => {props.change('mixins'); props.removeItem(e);}}>{props.ingredients.mixins}</OrderItem>
+  		<OrderItem onClick={(e) => {props.change('condiments'); props.removeItem(e);}}>{props.ingredients.condiments}</OrderItem>
+  		<OrderItem onClick={(e) => {props.change('baseLayers'); props.removeItem(e);}}>{props.ingredients.baseLayers}</OrderItem>
 
   	</IngredientWrapper>
   ) 

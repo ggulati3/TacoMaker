@@ -588,7 +588,7 @@ if (process.env.NODE_ENV === 'production') {
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.Item = exports.IngredientWrapper = exports.CondimentWrapper = exports.SeasoningWrapper = exports.MixingWrapper = exports.BaseLayerWrapper = exports.ShellWrapper = exports.CheckOut = exports.Header = exports.NavbarWrapper = exports.WebPage = undefined;
+exports.OrderItem = exports.Item = exports.IngredientWrapper = exports.CondimentWrapper = exports.SeasoningWrapper = exports.MixingWrapper = exports.BaseLayerWrapper = exports.ShellWrapper = exports.CheckOut = exports.Header = exports.NavbarWrapper = exports.WebPage = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n\tdisplay: flex;\n\tflex-wrap: wrap;\n'], ['\n\tdisplay: flex;\n\tflex-wrap: wrap;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n\tbackground-color: green;\n\tfont-family: Comic Sans MS;\n\tfont-size: 2em;\n\tcolor: yellow;\n\twidth: 100%;\n\theight: 2em;\n\tz-index: 1;\n\tdisplay:flex;\n'], ['\n\tbackground-color: green;\n\tfont-family: Comic Sans MS;\n\tfont-size: 2em;\n\tcolor: yellow;\n\twidth: 100%;\n\theight: 2em;\n\tz-index: 1;\n\tdisplay:flex;\n']),
@@ -600,7 +600,8 @@ var _templateObject = _taggedTemplateLiteral(['\n\tdisplay: flex;\n\tflex-wrap: 
     _templateObject8 = _taggedTemplateLiteral(['\n\tborder:solid;\n\twidth: 20%;\n\theight: 20em;\n\toverflow-y: scroll\n'], ['\n\tborder:solid;\n\twidth: 20%;\n\theight: 20em;\n\toverflow-y: scroll\n']),
     _templateObject9 = _taggedTemplateLiteral(['\n\tborder:solid;\n\tflex-grow:1;\n\talign-items: stretch;\n\theight:20em;\n\toverflow-y: scroll;\n'], ['\n\tborder:solid;\n\tflex-grow:1;\n\talign-items: stretch;\n\theight:20em;\n\toverflow-y: scroll;\n']),
     _templateObject10 = _taggedTemplateLiteral(['\n\tborder:solid;\n\tflex-grow:1;\n\talign-items: stretch;\n\tfont-family:Comic Sans MS;\n\theight: 20em;\n'], ['\n\tborder:solid;\n\tflex-grow:1;\n\talign-items: stretch;\n\tfont-family:Comic Sans MS;\n\theight: 20em;\n']),
-    _templateObject11 = _taggedTemplateLiteral(['\n\tbackground-color: green;\n\tfont-family:Comic Sans MS;\n\tfont-size:36px;\n\t&:hover {\n    \tbackground: yellow;\n  \t}\n'], ['\n\tbackground-color: green;\n\tfont-family:Comic Sans MS;\n\tfont-size:36px;\n\t&:hover {\n    \tbackground: yellow;\n  \t}\n']);
+    _templateObject11 = _taggedTemplateLiteral(['\n\tbackground-color: green;\n\tfont-family:Comic Sans MS;\n\tfont-size:36px;\n\t&:hover {\n    \tbackground: yellow;\n  \t}\n'], ['\n\tbackground-color: green;\n\tfont-family:Comic Sans MS;\n\tfont-size:36px;\n\t&:hover {\n    \tbackground: yellow;\n  \t}\n']),
+    _templateObject12 = _taggedTemplateLiteral(['\n\tfont-family:Comic Sans MS;\n\t\t&:hover {\n    \tbackground: red;\n  \t}\n'], ['\n\tfont-family:Comic Sans MS;\n\t\t&:hover {\n    \tbackground: red;\n  \t}\n']);
 
 var _styledComponents = __webpack_require__(53);
 
@@ -631,6 +632,8 @@ var CondimentWrapper = exports.CondimentWrapper = _styledComponents2.default.div
 var IngredientWrapper = exports.IngredientWrapper = _styledComponents2.default.div(_templateObject10);
 
 var Item = exports.Item = _styledComponents2.default.div(_templateObject11);
+
+var OrderItem = exports.OrderItem = _styledComponents2.default.h3(_templateObject12);
 
 /***/ }),
 /* 4 */
@@ -1736,6 +1739,7 @@ var App = function (_React$Component) {
 		_this.addIngredients = _this.addIngredients.bind(_this);
 		_this.changeItem = _this.changeItem.bind(_this);
 		_this.formSentence = _this.formSentence.bind(_this);
+		_this.removeItem = _this.removeItem.bind(_this);
 		return _this;
 	}
 
@@ -1771,6 +1775,13 @@ var App = function (_React$Component) {
 			alert('Congratulations! You have ordered a taco with ' + this.state.shells + ',\n\t\t\t' + this.state.mixins + ', ' + this.state.seasonings + ', ' + this.state.condiments + ', \n\t\t\t' + this.state.baseLayers);
 		}
 	}, {
+		key: 'removeItem',
+		value: function removeItem(e) {
+			e.preventDefault();
+			console.log(e.currentTarget.textContent);
+			this.setState(_defineProperty({}, this.item, ''));
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 
@@ -1788,7 +1799,7 @@ var App = function (_React$Component) {
 					_react2.default.createElement(_Shell2.default, { shellItems: this.state.menu.shells, add: this.addIngredients, item: this.item, change: this.changeItem }),
 					_react2.default.createElement(_Seasoning2.default, { seasoningItems: this.state.menu.seasonings, add: this.addIngredients, item: this.item, change: this.changeItem }),
 					_react2.default.createElement(_Mixing2.default, { mixingItems: this.state.menu.mixins, add: this.addIngredients, item: this.item, change: this.changeItem }),
-					_react2.default.createElement(_Ingredients2.default, { ingredients: this.state }),
+					_react2.default.createElement(_Ingredients2.default, { ingredients: this.state, removeItem: this.removeItem, item: this.item, change: this.changeItem }),
 					_react2.default.createElement(_Condiments2.default, { condimentItems: this.state.menu.condiments, add: this.addIngredients, item: this.item, change: this.changeItem }),
 					_react2.default.createElement(_BaseLayer2.default, { baseLayerItems: this.state.menu.baseLayers, add: this.addIngredients, item: this.item, change: this.changeItem })
 				);
@@ -27497,28 +27508,38 @@ function Ingredients(props) {
       'Current Order'
     ),
     _react2.default.createElement(
-      'h3',
-      null,
+      _Style.OrderItem,
+      { onClick: function onClick(e) {
+          props.change('shells');props.removeItem(e);
+        } },
       props.ingredients.shells
     ),
     _react2.default.createElement(
-      'h3',
-      null,
+      _Style.OrderItem,
+      { onClick: function onClick(e) {
+          props.change('seasonings');props.removeItem(e);
+        } },
       props.ingredients.seasonings
     ),
     _react2.default.createElement(
-      'h3',
-      null,
+      _Style.OrderItem,
+      { onClick: function onClick(e) {
+          props.change('mixins');props.removeItem(e);
+        } },
       props.ingredients.mixins
     ),
     _react2.default.createElement(
-      'h3',
-      null,
+      _Style.OrderItem,
+      { onClick: function onClick(e) {
+          props.change('condiments');props.removeItem(e);
+        } },
       props.ingredients.condiments
     ),
     _react2.default.createElement(
-      'h3',
-      null,
+      _Style.OrderItem,
+      { onClick: function onClick(e) {
+          props.change('baseLayers');props.removeItem(e);
+        } },
       props.ingredients.baseLayers
     )
   );
