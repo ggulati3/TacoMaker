@@ -5,9 +5,10 @@ function Seasoning(props) {
   return (
   	<SeasoningWrapper>
   		<h1>Choose Your Seasoning</h1>
+    
   		<div>
 	  			{props.seasoningItems.map((category, key) =>(
-                            <Item key={key}>{category}</Item>
+                            <Item key={key} onClick = {(e) => {props.change('seasonings'); props.add(e);}}>{category}</Item>
                           ))}
 	  	</div>
   	</SeasoningWrapper>

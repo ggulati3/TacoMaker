@@ -1699,6 +1699,8 @@ var _Style = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -1722,7 +1724,11 @@ var App = function (_React$Component) {
 			isLoading: true
 		};
 
+		_this.item = '';
+
 		_this.getMenu = _this.getMenu.bind(_this);
+		_this.addIngredients = _this.addIngredients.bind(_this);
+		_this.changeItem = _this.changeItem.bind(_this);
 		return _this;
 	}
 
@@ -1741,6 +1747,20 @@ var App = function (_React$Component) {
 			this.getMenu();
 		}
 	}, {
+		key: 'addIngredients',
+		value: function addIngredients(e) {
+			e.preventDefault();
+			console.log(this.item);
+			this.setState(_defineProperty({}, this.item, e.currentTarget.textContent));
+			//console.log(this.state)
+		}
+	}, {
+		key: 'changeItem',
+		value: function changeItem(value) {
+			this.item = value;
+			console.log(this.item);
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 
@@ -1755,12 +1775,12 @@ var App = function (_React$Component) {
 					_Style.WebPage,
 					null,
 					_react2.default.createElement(_navbar2.default, null),
-					_react2.default.createElement(_Shell2.default, { shellItems: this.state.menu.shells }),
-					_react2.default.createElement(_Seasoning2.default, { seasoningItems: this.state.menu.seasonings }),
-					_react2.default.createElement(_Ingredients2.default, null),
-					_react2.default.createElement(_Mixing2.default, { mixingItems: this.state.menu.mixins }),
-					_react2.default.createElement(_BaseLayer2.default, { baseLayerItems: this.state.menu.baseLayers }),
-					_react2.default.createElement(_Condiments2.default, { condimentItems: this.state.menu.condiments })
+					_react2.default.createElement(_Shell2.default, { shellItems: this.state.menu.shells, add: this.addIngredients, item: this.item, change: this.changeItem }),
+					_react2.default.createElement(_Seasoning2.default, { seasoningItems: this.state.menu.seasonings, add: this.addIngredients, item: this.item, change: this.changeItem }),
+					_react2.default.createElement(_Ingredients2.default, { ingredients: this.state }),
+					_react2.default.createElement(_Mixing2.default, { mixingItems: this.state.menu.mixins, add: this.addIngredients, item: this.item, change: this.changeItem }),
+					_react2.default.createElement(_BaseLayer2.default, { baseLayerItems: this.state.menu.baseLayers, add: this.addIngredients, item: this.item, change: this.changeItem }),
+					_react2.default.createElement(_Condiments2.default, { condimentItems: this.state.menu.condiments, add: this.addIngredients, item: this.item, change: this.changeItem })
 				);
 			}
 		}
@@ -27225,7 +27245,7 @@ function Shell(props) {
 		_react2.default.createElement(
 			'h1',
 			null,
-			'Choose Your Shell'
+			'Choose Your Shell '
 		),
 		_react2.default.createElement(
 			'div',
@@ -27233,7 +27253,9 @@ function Shell(props) {
 			props.shellItems.map(function (category, key) {
 				return _react2.default.createElement(
 					_Style.Item,
-					{ key: key },
+					{ key: key, onClick: function onClick(e) {
+							props.change('shells');props.add(e);
+						} },
 					category
 				);
 			})
@@ -27242,6 +27264,8 @@ function Shell(props) {
 }
 
 exports.default = Shell;
+
+// <Item key={key} onClick ={props.change('shells')} onClick ={props.add}>{category}</Item>
 
 /***/ }),
 /* 65 */
@@ -27277,7 +27301,9 @@ function BaseLayer(props) {
       props.baseLayerItems.map(function (category, key) {
         return _react2.default.createElement(
           _Style.Item,
-          { key: key },
+          { key: key, onClick: function onClick(e) {
+              props.change('baseLayers');props.add(e);
+            } },
           category
         );
       })
@@ -27321,7 +27347,9 @@ function Mixing(props) {
       props.mixingItems.map(function (category, key) {
         return _react2.default.createElement(
           _Style.Item,
-          { key: key },
+          { key: key, onClick: function onClick(e) {
+              props.change('mixins');props.add(e);
+            } },
           category
         );
       })
@@ -27365,7 +27393,9 @@ function Seasoning(props) {
       props.seasoningItems.map(function (category, key) {
         return _react2.default.createElement(
           _Style.Item,
-          { key: key },
+          { key: key, onClick: function onClick(e) {
+              props.change('seasonings');props.add(e);
+            } },
           category
         );
       })
@@ -27409,7 +27439,9 @@ function Condiments(props) {
       props.condimentItems.map(function (category, key) {
         return _react2.default.createElement(
           _Style.Item,
-          { key: key },
+          { key: key, onClick: function onClick(e) {
+              props.change('condiments');props.add(e);
+            } },
           category
         );
       })
@@ -27446,6 +27478,31 @@ function Ingredients(props) {
       'h1',
       null,
       'Current Ingredients'
+    ),
+    _react2.default.createElement(
+      'h3',
+      null,
+      props.ingredients.shells
+    ),
+    _react2.default.createElement(
+      'h3',
+      null,
+      props.ingredients.seasonings
+    ),
+    _react2.default.createElement(
+      'h3',
+      null,
+      props.ingredients.mixins
+    ),
+    _react2.default.createElement(
+      'h3',
+      null,
+      props.ingredients.condiments
+    ),
+    _react2.default.createElement(
+      'h3',
+      null,
+      props.ingredients.baseLayers
     )
   );
 }

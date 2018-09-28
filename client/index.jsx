@@ -23,7 +23,11 @@ class App extends React.Component{
 			isLoading: true
 		}
 
+		this.item = '';
+
 		this.getMenu = this.getMenu.bind(this)
+		this.addIngredients = this.addIngredients.bind(this);
+		this.changeItem = this.changeItem.bind(this);
 	}
 
 	getMenu(){
@@ -36,6 +40,19 @@ class App extends React.Component{
 		this.getMenu()
 	}
 
+	addIngredients(e){
+		e.preventDefault();
+		console.log(this.item)
+		this.setState({[this.item]: e.currentTarget.textContent})
+		//console.log(this.state)
+		
+	}
+
+	changeItem (value){
+		this.item = value;
+		console.log(this.item)
+	}
+
 	render(){ 
 
 			if (this.state.isLoading) {
@@ -44,12 +61,13 @@ class App extends React.Component{
 				return(
 					<WebPage> 
 						<Navbar></Navbar>
-						<Shell shellItems = {this.state.menu.shells}></Shell>
-						<Seasoning seasoningItems = {this.state.menu.seasonings}></Seasoning>
-						<Ingredients></Ingredients>
-						<Mixing mixingItems = {this.state.menu.mixins}></Mixing>
-						<BaseLayer baseLayerItems = {this.state.menu.baseLayers}></BaseLayer>
-						<Condiments condimentItems = {this.state.menu.condiments}></Condiments>
+						<Shell shellItems = {this.state.menu.shells} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></Shell>
+						<Seasoning seasoningItems = {this.state.menu.seasonings} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></Seasoning>
+						<Ingredients ingredients = {this.state}></Ingredients>
+
+						<Mixing mixingItems = {this.state.menu.mixins} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></Mixing>
+						<BaseLayer baseLayerItems = {this.state.menu.baseLayers} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></BaseLayer>
+						<Condiments condimentItems = {this.state.menu.condiments} add = {this.addIngredients} item = {this.item} change = {this.changeItem}></Condiments>
 					</WebPage>
 				);	
 			}

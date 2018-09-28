@@ -7,7 +7,7 @@ function BaseLayer(props) {
   		<h1>Choose Your Base Layer</h1>
   		<div>
 	  		{props.baseLayerItems.map((category, key) =>(
-                <Item key={key}>{category}</Item>
+                <Item key={key} onClick = {(e) => {props.change('baseLayers'); props.add(e);}}>{category}</Item>
             ))}
 	  	</div>
   	</BaseLayerWrapper>

@@ -8,7 +8,7 @@ function Mixing(props) {
   		<h1>Choose Your Mixing</h1>
   		<div>
 	  			{props.mixingItems.map((category, key) =>(
-                            <Item key={key}>{category}</Item>
+                            <Item key={key} onClick = {(e) => {props.change('mixins'); props.add(e);}}>{category}</Item>
                           ))}
 	  	</div>
   	</MixingWrapper>
