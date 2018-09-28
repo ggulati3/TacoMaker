@@ -5,7 +5,11 @@ function Shell(props) {
 	  return (
 	  	<ShellWrapper>
 	  		<h1>Choose Your Shell</h1>
-	  		{props.shellItems.forEach( item ) => {return <Item>item<Item>}}
+	  		<div>
+	  			{props.shellItems.map((category, key) =>(
+                            <Item key={key}>{category}</Item>
+                          ))}
+	  		</div>
 	  	</ShellWrapper>
 	  );
 }

@@ -45,11 +45,11 @@ class App extends React.Component{
 					<WebPage> 
 						<Navbar></Navbar>
 						<Shell shellItems = {this.state.menu.shells}></Shell>
-						<Seasoning></Seasoning>
+						<Seasoning seasoningItems = {this.state.menu.seasonings}></Seasoning>
 						<Ingredients></Ingredients>
-						<Mixing></Mixing>
-						<BaseLayer></BaseLayer>
-						<Condiments></Condiments>
+						<Mixing mixingItems = {this.state.menu.mixins}></Mixing>
+						<BaseLayer baseLayerItems = {this.state.menu.baseLayers}></BaseLayer>
+						<Condiments condimentItems = {this.state.menu.condiments}></Condiments>
 					</WebPage>
 				);	
 			}

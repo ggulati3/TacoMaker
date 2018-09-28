@@ -1,10 +1,15 @@
 import React from 'react';
-import { SeasoningWrapper } from './Style.jsx';
+import { SeasoningWrapper, Item } from './Style.jsx';
 
 function Seasoning(props) {
   return (
   	<SeasoningWrapper>
   		<h1>Choose Your Seasoning</h1>
+  		<div>
+	  			{props.seasoningItems.map((category, key) =>(
+                            <Item key={key}>{category}</Item>
+                          ))}
+	  	</div>
   	</SeasoningWrapper>
   )
 }

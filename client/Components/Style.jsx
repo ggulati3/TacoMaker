@@ -19,11 +19,14 @@ export const ShellWrapper = styled.div`
   border:solid
   height: 10em;
   width: 25%;
+
 `;
 
 export const BaseLayerWrapper = styled.div `
 	border:solid;
 	width: 50%;
+	height: 20em;
+	overflow-y: scroll;
 `;
 
 export const MixingWrapper = styled.div `
@@ -34,11 +37,15 @@ export const MixingWrapper = styled.div `
 export const SeasoningWrapper = styled.div `
 	border:solid;
 	width: 50%;
+	height: 10em;
+	overflow-y: scroll
 `;
 
 export const CondimentWrapper = styled.div `
 	border:solid;
 	width:75.5%;
+	height: 12em;
+	overflow-y: scroll;
 `;
 
 export const IngredientWrapper = styled.div `
@@ -50,4 +57,7 @@ export const IngredientWrapper = styled.div `
 
 export const Item = styled.div `
 	background-color: green;
+	&:hover {
+    	background: yellow;
+  	}
 `

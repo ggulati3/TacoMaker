@@ -592,12 +592,13 @@ exports.Item = exports.IngredientWrapper = exports.CondimentWrapper = exports.Se
 
 var _templateObject = _taggedTemplateLiteral(['\n\tdisplay: flex;\n\tflex-wrap: wrap;\n'], ['\n\tdisplay: flex;\n\tflex-wrap: wrap;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n\tbackground-color: green;\n\tfont-family: Comic Sans MS;\n\tfont-size: 2em;\n\tcolor: yellow;\n\twidth: 100%;\n\theight: 2em;\n\tz-index: 1;\n'], ['\n\tbackground-color: green;\n\tfont-family: Comic Sans MS;\n\tfont-size: 2em;\n\tcolor: yellow;\n\twidth: 100%;\n\theight: 2em;\n\tz-index: 1;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  border:solid\n  height: 10em;\n  width: 25%;\n'], ['\n  border:solid\n  height: 10em;\n  width: 25%;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n\tborder:solid;\n\twidth: 50%;\n'], ['\n\tborder:solid;\n\twidth: 50%;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  border:solid\n  height: 10em;\n  width: 25%;\n\n'], ['\n  border:solid\n  height: 10em;\n  width: 25%;\n\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n\tborder:solid;\n\twidth: 50%;\n\theight: 20em;\n\toverflow-y: scroll;\n'], ['\n\tborder:solid;\n\twidth: 50%;\n\theight: 20em;\n\toverflow-y: scroll;\n']),
     _templateObject5 = _taggedTemplateLiteral(['\n\tborder:solid;\n\twidth:25%;\n'], ['\n\tborder:solid;\n\twidth:25%;\n']),
-    _templateObject6 = _taggedTemplateLiteral(['\n\tborder:solid;\n\twidth:75.5%;\n'], ['\n\tborder:solid;\n\twidth:75.5%;\n']),
-    _templateObject7 = _taggedTemplateLiteral(['\n\tborder:solid;\n\tflex-grow:1;\n\talign-items: stretch;\n\theight: 10em;\n'], ['\n\tborder:solid;\n\tflex-grow:1;\n\talign-items: stretch;\n\theight: 10em;\n']),
-    _templateObject8 = _taggedTemplateLiteral(['\n\tbackground-color: green;\n'], ['\n\tbackground-color: green;\n']);
+    _templateObject6 = _taggedTemplateLiteral(['\n\tborder:solid;\n\twidth: 50%;\n\theight: 10em;\n\toverflow-y: scroll\n'], ['\n\tborder:solid;\n\twidth: 50%;\n\theight: 10em;\n\toverflow-y: scroll\n']),
+    _templateObject7 = _taggedTemplateLiteral(['\n\tborder:solid;\n\twidth:75.5%;\n\theight: 12em;\n\toverflow-y: scroll;\n'], ['\n\tborder:solid;\n\twidth:75.5%;\n\theight: 12em;\n\toverflow-y: scroll;\n']),
+    _templateObject8 = _taggedTemplateLiteral(['\n\tborder:solid;\n\tflex-grow:1;\n\talign-items: stretch;\n\theight: 10em;\n'], ['\n\tborder:solid;\n\tflex-grow:1;\n\talign-items: stretch;\n\theight: 10em;\n']),
+    _templateObject9 = _taggedTemplateLiteral(['\n\tbackground-color: green;\n\t&:hover {\n    \tbackground: yellow;\n  \t}\n'], ['\n\tbackground-color: green;\n\t&:hover {\n    \tbackground: yellow;\n  \t}\n']);
 
 var _styledComponents = __webpack_require__(53);
 
@@ -617,13 +618,13 @@ var BaseLayerWrapper = exports.BaseLayerWrapper = _styledComponents2.default.div
 
 var MixingWrapper = exports.MixingWrapper = _styledComponents2.default.div(_templateObject5);
 
-var SeasoningWrapper = exports.SeasoningWrapper = _styledComponents2.default.div(_templateObject4);
+var SeasoningWrapper = exports.SeasoningWrapper = _styledComponents2.default.div(_templateObject6);
 
-var CondimentWrapper = exports.CondimentWrapper = _styledComponents2.default.div(_templateObject6);
+var CondimentWrapper = exports.CondimentWrapper = _styledComponents2.default.div(_templateObject7);
 
-var IngredientWrapper = exports.IngredientWrapper = _styledComponents2.default.div(_templateObject7);
+var IngredientWrapper = exports.IngredientWrapper = _styledComponents2.default.div(_templateObject8);
 
-var Item = exports.Item = _styledComponents2.default.div(_templateObject8);
+var Item = exports.Item = _styledComponents2.default.div(_templateObject9);
 
 /***/ }),
 /* 4 */
@@ -1755,11 +1756,11 @@ var App = function (_React$Component) {
 					null,
 					_react2.default.createElement(_navbar2.default, null),
 					_react2.default.createElement(_Shell2.default, { shellItems: this.state.menu.shells }),
-					_react2.default.createElement(_Seasoning2.default, null),
+					_react2.default.createElement(_Seasoning2.default, { seasoningItems: this.state.menu.seasonings }),
 					_react2.default.createElement(_Ingredients2.default, null),
-					_react2.default.createElement(_Mixing2.default, null),
-					_react2.default.createElement(_BaseLayer2.default, null),
-					_react2.default.createElement(_Condiments2.default, null)
+					_react2.default.createElement(_Mixing2.default, { mixingItems: this.state.menu.mixins }),
+					_react2.default.createElement(_BaseLayer2.default, { baseLayerItems: this.state.menu.baseLayers }),
+					_react2.default.createElement(_Condiments2.default, { condimentItems: this.state.menu.condiments })
 				);
 			}
 		}
@@ -27200,10 +27201,47 @@ exports.isStrictMode = isStrictMode;
 
 /***/ }),
 /* 64 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Module build failed: SyntaxError: Unexpected token, expected } (8:39)\n\n\u001b[0m \u001b[90m  6 | \u001b[39m\t  \t\u001b[33m<\u001b[39m\u001b[33mShellWrapper\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m  7 | \u001b[39m\t  \t\t\u001b[33m<\u001b[39m\u001b[33mh1\u001b[39m\u001b[33m>\u001b[39m\u001b[33mChoose\u001b[39m \u001b[33mYour\u001b[39m \u001b[33mShell\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mh1\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 | \u001b[39m\t  \t\t{props\u001b[33m.\u001b[39mshellItems\u001b[33m.\u001b[39mforEach( item ) \u001b[33m=>\u001b[39m {\u001b[36mreturn\u001b[39m \u001b[33m<\u001b[39m\u001b[33mItem\u001b[39m\u001b[33m>\u001b[39mitem\u001b[33m<\u001b[39m\u001b[33mItem\u001b[39m\u001b[33m>\u001b[39m}}\n \u001b[90m    | \u001b[39m\t  \t\t                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 | \u001b[39m\t  \t\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mShellWrapper\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 10 | \u001b[39m\t  )\u001b[33m;\u001b[39m\n \u001b[90m 11 | \u001b[39m}\u001b[0m\n");
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Style = __webpack_require__(3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Shell(props) {
+	return _react2.default.createElement(
+		_Style.ShellWrapper,
+		null,
+		_react2.default.createElement(
+			'h1',
+			null,
+			'Choose Your Shell'
+		),
+		_react2.default.createElement(
+			'div',
+			null,
+			props.shellItems.map(function (category, key) {
+				return _react2.default.createElement(
+					_Style.Item,
+					{ key: key },
+					category
+				);
+			})
+		)
+	);
+}
+
+exports.default = Shell;
 
 /***/ }),
 /* 65 */
@@ -27232,6 +27270,17 @@ function BaseLayer(props) {
       'h1',
       null,
       'Choose Your Base Layer'
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      props.baseLayerItems.map(function (category, key) {
+        return _react2.default.createElement(
+          _Style.Item,
+          { key: key },
+          category
+        );
+      })
     )
   );
 }
@@ -27265,6 +27314,17 @@ function Mixing(props) {
       'h1',
       null,
       'Choose Your Mixing'
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      props.mixingItems.map(function (category, key) {
+        return _react2.default.createElement(
+          _Style.Item,
+          { key: key },
+          category
+        );
+      })
     )
   );
 }
@@ -27298,6 +27358,17 @@ function Seasoning(props) {
       'h1',
       null,
       'Choose Your Seasoning'
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      props.seasoningItems.map(function (category, key) {
+        return _react2.default.createElement(
+          _Style.Item,
+          { key: key },
+          category
+        );
+      })
     )
   );
 }
@@ -27331,6 +27402,17 @@ function Condiments(props) {
       'h1',
       null,
       'Choose Your Condiment'
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      props.condimentItems.map(function (category, key) {
+        return _react2.default.createElement(
+          _Style.Item,
+          { key: key },
+          category
+        );
+      })
     )
   );
 }
