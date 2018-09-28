@@ -47,3 +47,7 @@ export const IngredientWrapper = styled.div `
 	align-items: stretch;
 	height: 10em;
 `;
+
+export const Item = styled.div `
+	background-color: green;
+`

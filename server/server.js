@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-
+const axios = require('axios')
 const port = process.env.PORT || 3000;
 const getItems = require('./getItems.js');
 var bodyParser = require('body-parser');
@@ -22,12 +22,11 @@ var tacoItems = {
 	condiments: []
 };
 
-app.get('/tacos/:item', (req, res) => {
-	getItems(req.params.item).then ((value) => {
-		res.send(JSON.stringify(value))
+app.get('/taco/menu', (req, res) => {
+	getItems(tacoItems).then( (obj) => {
+		res.send(JSON.stringify(obj));
 	})
 })
-
 
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);

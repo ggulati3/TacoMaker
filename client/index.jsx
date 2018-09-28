@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import axios from 'axios';
 import Navbar from './Components/navbar.jsx';
 import Shell from './Components/Shell.jsx';
 import BaseLayer from './Components/BaseLayer.jsx';
@@ -19,29 +19,42 @@ class App extends React.Component{
 			mixins: '',
 			seasonings: '',
 			condiments: '',
-			baseLayers: ''
+			baseLayers: '',
+			isLoading: true
 		}
-		this.getAPI = this.getAPI.bind(this);
 
+		this.getMenu = this.getMenu.bind(this)
 	}
 
-	getAPI(){
-	
+	getMenu(){
+		axios.get('/taco/menu').then( (obj) => {
+			this.setState({isLoading: false, menu: obj.data})
+		})
 	}
 
-	render(){
-		return(
-			<WebPage onClick = {this.getAPI}>
-				<Navbar>{console.log(this.state)}</Navbar>
-				<Shell></Shell>
-				<Seasoning></Seasoning>
-				<Ingredients></Ingredients>
-				<Mixing></Mixing>
-				<BaseLayer></BaseLayer>
-				<Condiments></Condiments>
-			</WebPage>
-		)
+	componentDidMount() {
+		this.getMenu()
 	}
+
+	render(){ 
+
+			if (this.state.isLoading) {
+     	 return <p>Loading...</p>;
+			} else {
+				return(
+					<WebPage> 
+						<Navbar></Navbar>
+						<Shell shellItems = {this.state.menu.shells}></Shell>
+						<Seasoning></Seasoning>
+						<Ingredients></Ingredients>
+						<Mixing></Mixing>
+						<BaseLayer></BaseLayer>
+						<Condiments></Condiments>
+					</WebPage>
+				);	
+			}
+	}
+		
 }
 
 ReactDOM.render(<App />, document.getElementById('root'))
